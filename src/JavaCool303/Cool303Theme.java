@@ -1,26 +1,43 @@
 package JavaCool303;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
+import java.awt.*;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
 
+public abstract class Cool303Theme {
+	
 
-public interface Cool303Theme {
+	
+	
+	
+	protected Color buttonTextColor;
+	protected Color buttonBackground;
+//	private int buttonFontSize;
+	protected Dimension buttonDimension;
+	protected Font buttonFont;
+	protected ImageIcon buttonIcon;
 
-	Color getButtonBackground();
+	
 
-	Color getButtonTextColor();
+//	private int titleFontSize;
+	
+	public Color getButtonTextColor(){
+		return buttonTextColor;
+	}
+	public Color getButtonBackground(){
+		return buttonBackground;
+	}
 
-	int getButtonWidth();
-
-	int getButtonHeight();
-
-	Font getButtonFont();
-
-	Dimension getButtonDimension();
-
-
+	public Dimension getButtonDimension(){
+		return buttonDimension;
+	}
+	
+	public Font getButtonFont(){
+		return buttonFont;
+	}
+	
+	public ImageIcon getButtonIcon(){
+		return buttonIcon;
+	}
 
 }

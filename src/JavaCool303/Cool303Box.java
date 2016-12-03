@@ -10,12 +10,13 @@
 package JavaCool303;
 import javax.swing.*;
 import java.awt.*;
+import java.util.*;
 
 
 public class Cool303Box extends JFrame{
 
 	// all the components inside the box
-	Cool303Component[] components;
+	ArrayList<Cool303Component> components = new ArrayList<Cool303Component>();
 	// supplied theme
 	Cool303Theme theme;
 	
@@ -28,13 +29,13 @@ public class Cool303Box extends JFrame{
 	
 	
 	// add a container in the box
-	public void addContainer(Cool303Container container){
-		
+	public void put(Cool303Component c){
+		components.add(c);
 	}
 
 	// apply theme recursively to a component and its children
 	private void applyTheme(Cool303Component c) {
-		c.setTheme(theme);
+		c.setTheme(this.theme);
 		for (int i=0; i<c.getChildren().length; i++){
 			Cool303Component child = c.getChildren()[i];
 			applyTheme(child);
@@ -43,21 +44,19 @@ public class Cool303Box extends JFrame{
 	
 	// render box
 	public void render(Cool303Theme theme){
-		// apply theme
-		for (int i=0; i<components.length; i++){
-			applyTheme(components[i]);
-		}
-		// create our box
-		JPanel box = new JPanel();
-		box.setLayout(new GridLayout(1,20)); 
-		// put all components on our box
-		for (int i=0; i<100; i++){
-			box.add((Component) components[i]);
-		}
+		this.theme = theme;
+		
 		// display the window
 		JFrame frame = new JFrame();
+		// apply theme
+		for (int i=0; i<components.size(); i++){
+			Cool303Component c = components.get(i);
+			applyTheme(c);
+			frame.add((Component) c);
+		}
+		frame.setLayout(new GridLayout(1,20));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.add(new JScrollPane(box), BorderLayout.CENTER);
+		frame.setSize(100,100);
 		frame.pack();
 		frame.setVisible(true);
 	}

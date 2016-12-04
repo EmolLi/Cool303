@@ -2,6 +2,7 @@
  * Button class.
  * It extends from swing's JButton.
  * And it's a component.
+ * Different from JButton, the default border of Cool303Button is no border
  * @author Jack
  *
  */
@@ -59,6 +60,30 @@ public class Cool303Button extends JButton implements Cool303Component {
 		// font family, style, and size
 		if (theme.getButtonFont() instanceof Font){
 			this.setFont(theme.getButtonFont());
+		}
+		// icon
+		if (theme.getButtonIcon() instanceof ImageIcon){
+			this.setIcon(theme.getButtonIcon());
+		}
+		// selected icon
+		if (theme.getButtonSelectedIcon() instanceof ImageIcon){
+			this.setPressedIcon(theme.getButtonSelectedIcon());;
+		}
+		// tool tip text
+		if (theme.getButtonToolTipText()){
+			this.setText("");
+			this.setToolTipText(label+"");
+		}
+		// is opaque
+		if (theme.getButtonOpaque()){
+			this.setOpaque(theme.getButtonOpaque());
+		}
+		// default border is no border
+		this.setBorder(theme.getButtonBorder());
+		// rollover effect
+		if (theme.getButtonIsRollover()){
+			this.setRolloverEnabled(theme.getButtonIsRollover());
+			this.setRolloverIcon(theme.getButtonSelectedIcon());
 		}
 		// paint button
 		this.repaint();

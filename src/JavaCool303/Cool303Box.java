@@ -33,7 +33,7 @@ public class Cool303Box extends JFrame{
 	public void put(Cool303Component c){
 		components.add(c);
 	}
-
+	
 	// apply theme recursively to a component and its children
 	private void applyTheme(Cool303Component c) {
 		c.setTheme(this.theme);
@@ -49,13 +49,16 @@ public class Cool303Box extends JFrame{
 		
 		// display the window
 		JFrame frame = new JFrame();
+		//frame.setLayout(new FlowLayout());
+		
 		// apply theme
+		
+		
 		for (int i=0; i<components.size(); i++){
 			Cool303Component c = components.get(i);
 			applyTheme(c);
 			frame.add((Component) c);
 		}
-		frame.setLayout(new GridLayout(1,20));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(100,100);
 		frame.pack();

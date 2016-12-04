@@ -7,24 +7,27 @@ import javax.swing.border.Border;
 
 public abstract class Cool303Theme {
 	
-
-	
-	
-	
+	//button attributes
 	protected Color buttonTextColor;
 	protected Color buttonBackground;
-//	private int buttonFontSize;
 	protected Dimension buttonDimension;
 	protected Font buttonFont;
 	protected ImageIcon buttonIcon;
+	protected ImageIcon buttonSelectedIcon;
+	protected Border buttonBorder;
+	protected boolean buttonIsToolTipText;
+	protected boolean buttonOpaque;
+	protected boolean buttonIsRollover;
 
+
+	//container attributes
 	protected LayoutManager containerLayout;
 	protected Dimension containerSize;
 	protected Border containerBorder;
 	protected Color containerBackground;
 	
 	
-	
+	//container get methods
 	public LayoutManager getContainerLayout(){
 		return containerLayout;
 	}
@@ -41,6 +44,8 @@ public abstract class Cool303Theme {
 		return containerBackground;
 	}
 	
+	
+	//button get methods
 	public Color getButtonTextColor(){
 		return buttonTextColor;
 	}
@@ -59,7 +64,19 @@ public abstract class Cool303Theme {
 	public ImageIcon getButtonIcon(){
 		return buttonIcon;
 	}
-	
-	
-
+	public ImageIcon getButtonSelectedIcon(){
+		return buttonSelectedIcon;
+	}
+	public Border getButtonBorder(){
+		return buttonBorder;
+	}
+	public boolean getButtonToolTipText(){
+		return buttonIsToolTipText;
+	}
+	public boolean getButtonOpaque(){
+		return buttonOpaque;
+	}
+	public boolean getButtonIsRollover(){
+		return buttonIsRollover;
+	}
 }

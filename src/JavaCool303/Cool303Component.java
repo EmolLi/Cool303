@@ -9,6 +9,7 @@
 package JavaCool303;
 
 import java.util.*;
+import java.awt.*;
 
 public interface Cool303Component {
 

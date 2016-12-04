@@ -8,6 +8,7 @@
 
 package JavaCool303;
 
+import java.util.*;
 
 public interface Cool303Component {
 
@@ -15,6 +16,6 @@ public interface Cool303Component {
 	public void setTheme(Cool303Theme theme);
 
 	// each component can have children components 
-	public Cool303Component[] getChildren();
+	public ArrayList<Cool303Component> getChildren();
 	
 }

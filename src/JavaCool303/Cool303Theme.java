@@ -3,6 +3,7 @@ package JavaCool303;
 import java.awt.*;
 
 import javax.swing.ImageIcon;
+import javax.swing.border.Border;
 
 public abstract class Cool303Theme {
 	
@@ -17,9 +18,28 @@ public abstract class Cool303Theme {
 	protected Font buttonFont;
 	protected ImageIcon buttonIcon;
 
+	protected LayoutManager containerLayout;
+	protected Dimension containerSize;
+	protected Border containerBorder;
+	protected Color containerBackground;
 	
-
-//	private int titleFontSize;
+	
+	
+	public LayoutManager getContainerLayout(){
+		return containerLayout;
+	}
+	
+	public Dimension getContainerSize(){
+		return containerSize;
+	}
+	
+	public Border getContainerBorder(){
+		return containerBorder;
+	}
+	
+	public Color getContainerBackground(){
+		return containerBackground;
+	}
 	
 	public Color getButtonTextColor(){
 		return buttonTextColor;
@@ -39,5 +59,7 @@ public abstract class Cool303Theme {
 	public ImageIcon getButtonIcon(){
 		return buttonIcon;
 	}
+	
+	
 
 }

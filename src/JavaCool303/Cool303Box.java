@@ -16,13 +16,14 @@ import java.util.*;
 public class Cool303Box extends JFrame{
 
 	// all the components inside the box
-	ArrayList<Cool303Component> components = new ArrayList<Cool303Component>();
+	private ArrayList<Cool303Component> components = new ArrayList<Cool303Component>();
 	// supplied theme
 	Cool303Theme theme;
 	
 	
 	
 	// class constructor
+	
 	public Cool303Box(){
 		
 	}
@@ -36,8 +37,8 @@ public class Cool303Box extends JFrame{
 	// apply theme recursively to a component and its children
 	private void applyTheme(Cool303Component c) {
 		c.setTheme(this.theme);
-		for (int i=0; i<c.getChildren().length; i++){
-			Cool303Component child = c.getChildren()[i];
+		for (int i=0; i<c.getChildren().size(); i++){
+			Cool303Component child = c.getChildren().get(i);
 			applyTheme(child);
 		}
 	}

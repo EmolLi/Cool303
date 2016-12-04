@@ -15,6 +15,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 
 public class Cool303Button extends JButton implements Cool303Component {
@@ -66,8 +67,8 @@ public class Cool303Button extends JButton implements Cool303Component {
 	// by default, a component can have children
 	// a button doesn't have any children
 	@Override
-	public Cool303Component[] getChildren() {
-		Cool303Component[] children = {};
+	public ArrayList<Cool303Component> getChildren() {
+		ArrayList<Cool303Component> children = new ArrayList<Cool303Component>();
 		return children;
 	}
 	

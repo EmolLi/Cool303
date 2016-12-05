@@ -1,3 +1,7 @@
+/**
+ * Theme Pastel
+ * It provides pastel style buttons and containers, and windows
+ */
 package JavaCool303;
 
 import java.awt.Color;
@@ -13,15 +17,23 @@ public class Cool303ThemePastel extends Cool303Theme {
 		buttonTextColor = new Color(100,100,100);
 		buttonBackground = new Color(255,255,255);
 		buttonFont = new Font("Courier New", Font.ITALIC, 12);
-		buttonIcon = new ImageIcon("/home/emol/cs/Practice/Cool303/icon/icon2.png");
-		buttonSelectedIcon = new ImageIcon("/home/emol/cs/Practice/Cool303/icon/icon3.png");
-		buttonDimension = new Dimension(30,buttonIcon.getIconHeight());
+		buttonIcon = new ImageIcon("././icon/icon5.png");
+		buttonSelectedIcon = new ImageIcon("././icon/iconPS.png");
+		buttonDimension = new Dimension(buttonIcon.getIconWidth(),buttonIcon.getIconHeight());
 		buttonIsToolTipText = true;
+		buttonIsIconShape = true;
+		buttonIsRollover = true;
+		buttonRollOverIcon = new ImageIcon("././icon/iconPH.png");
 		
-		containerLayout = new GridLayout(4,5);
-
+		//containerLayout = new GridLayout(5,4);
+		containerBackgroundpic = new ImageIcon("././icon/bb.png");
+		containerSize = new Dimension(200,150);
+		containerOpaque = false;
+		//containerPosistion 
 		
-
+		boxSize = new Dimension(500,400);
+		boxIsUndecorated = true;
+		
 		
 	}
 }

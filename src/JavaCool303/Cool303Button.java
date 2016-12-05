@@ -45,6 +45,7 @@ public class Cool303Button extends JButton implements Cool303Component {
 	// set button theme
 	@Override
 	public void setTheme(Cool303Theme theme) {
+		
 		// background color
 		if (theme.getButtonBackground() instanceof Color){
 			this.setBackground(theme.getButtonBackground());
@@ -83,7 +84,14 @@ public class Cool303Button extends JButton implements Cool303Component {
 		// rollover effect
 		if (theme.getButtonIsRollover()){
 			this.setRolloverEnabled(theme.getButtonIsRollover());
-			this.setRolloverIcon(theme.getButtonSelectedIcon());
+			if (theme.getButtonRollOverIcon() instanceof ImageIcon){
+				this.setRolloverIcon(theme.getButtonRollOverIcon());
+			}
+		}
+		// button shape
+		if (theme.getButtonIsIconShape()){
+			this.setContentAreaFilled(false);
+			this.setFocusPainted(false);
 		}
 		// paint button
 		this.repaint();

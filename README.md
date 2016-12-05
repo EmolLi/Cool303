@@ -8,11 +8,12 @@
   
   Check out the demo on how to apply theme.
   
-  
   For JavaCool303 Classes and methods, check out doc for detailed explaination.
   
   
-  SUPER EASY TO CUSTOMIZE YOUR OWN THEME
+  
+  
+  **SUPER EASY TO CUSTOMIZE YOUR OWN THEME**
   
   The main advantage of JavaCool303 is it's super easy for developer to create their own themes.
   We provides an abstract class Cool303Theme that already implements all the functions you need. 
@@ -21,7 +22,7 @@
   
   
   
-  STRATEGY PATTERN
+  **STRATEGY PATTERN**
   
   We used strategy pattern in styling the GUI. To style the GUI, you have a bunch of themes to choose from!
   You pass one theme to the topmost container JavaCool303Box, and Box will handles all the rest work.
@@ -33,27 +34,27 @@
   We have considered using decorator pattern. However, with decorator pattern, theme is responsible for styling, so user have to implement their own methods to write a new theme. He may need to read over Swing docs to figure how to override paint() so he could change the shape of a component. But in our way, he just need to set the backgroundPic to a picture, then automatically the button has the shape with the picture. It works best with png image, as it's good for image with transparent part, so we have various shapes of components! Checkout Cool303ThemePastel for customized shape window.
   
   
-  Other well-formed techniques
   
+  **Other well-formed techniques**
   
-  abstract class & inheritance: Cool303Theme
+  **abstract class & inheritance**: Cool303Theme
   
   All customized theme extends this class, and gets all the methods needed to style the GUI. 
   This highly increases code reuse in the long run. 
   And it formats what the developer could do, so it's programming by contract.
   
   
-  protected:
+  **protected**:
   
   All attributes in Cool303Theme are defined protected. In this way, it's easy for programmer to write his own theme, he could change the theme attributes freely. No need for setter methods. But other objects cannot change the theme attributes.
   
   
-  interface: Cool303Component
+  **interface**: Cool303Component
   
   All the classes in Cool303 package (except themes) implements this interface. They are all Cool303Components, this makes sure they all implements getChildren and setTheme methods. (programming by contract)
   
   
-  inheritance:
+  **inheritance**:
   
   Cool303 classes are based on Java Swing. Cool303Box extends JFrame, Cool303Container extends JPanel, Cool303Button extends JButton. So they got all the methods of the parent classes.
   
